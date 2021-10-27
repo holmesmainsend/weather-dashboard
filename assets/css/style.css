@@ -1,0 +1,4 @@
+#gradient {
+    background-image: linear-gradient(to right, rgb(73, 73, 255), navy);
+    color: white;
+}
