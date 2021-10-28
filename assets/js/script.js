@@ -1,11 +1,14 @@
 // DOM
 var input = document.querySelector(".input");
 var form = document.querySelector(".form");
+var currentBox = document.querySelector(".current-box");
 var cityTitle = document.querySelector(".city-title");
 var temp = document.querySelector(".temp");
 var wind = document.querySelector(".wind");
 var humidity = document.querySelector(".humidity");
 var uvIndex = document.querySelector(".uvIndex");
+var cardDate = document.querySelector(".card-date");
+
 
 // Function
 function getWeather(event) {
@@ -57,14 +60,22 @@ function getWeather(event) {
               var fahrenheit = (weatherData.current.temp - 273.15) * (9/5) + 32;
 
               // Page Text Content
-              cityTitle.textContent = cityName + " (" + humanDateFormat + ")";
-              temp.textContent = "Temp: " + fahrenheit.toFixed(2) + "°F";
-              wind.textContent = "Wind: " + weatherData.current.wind_speed.toFixed(2) + " MPH";
-              humidity.textContent = "Humidity: " + weatherData.current.humidity + "%";
-              uvIndex.textContent = "UV Index: " + weatherData.current.uvi;
-
-
+              for (i = 0; i < 6; i++) {
+                  if (i === 0) {
+                    currentBox.classList.add("border", "border-dark");
+                    cityTitle.textContent = cityName + " (" + humanDateFormat + ")";
+                    temp.textContent = "Temp: " + fahrenheit.toFixed(2) + "°F";
+                    wind.textContent = "Wind: " + weatherData.current.wind_speed.toFixed(2) + " MPH";
+                    humidity.textContent = "Humidity: " + weatherData.current.humidity + "%";
+                    uvIndex.textContent = "UV Index: " + weatherData.current.uvi;
+                  } else {
+                      console.log("muffins");
+                  }
+              }
+              
+              
               input.value = "";
+
             });
           } 
           // Error Handling
