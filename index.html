@@ -1,106 +1,103 @@
+<!--TODO-->
+<!--Fetch appropriate weather data from API and append to page as current conditions-->
+<!--Fetch appropriate weather data from API and append to page as 5-day forecast cards-->
+<!--Add weather icons depending on forecasted conditions, along with UV index color (green, yellow, or red)-->
+<!--Save previous searches to local storage and use to populate city search sidebar as buttons-->
+<!--Make search history sidebar buttons clickable, generating a new forecast for the city as a result-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
-    
+
     <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
 
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body>
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
     <div class="container px-0 mx-auto">
-        <div class="row">
-            <div id="gradient" class="col-12 text-center border border-solid">
-                <h1>
-                    Weather Dashboard
-                </h1>
-            </div>
+      <div class="row">
+        <div id="gradient" class="col-12 text-center border border-solid py-2">
+          <h1 class="bold">Weather Dashboard</h1>
         </div>
+      </div>
     </div>
 
-    <div class="container px-0 mx-auto">
-        <div class="row">
-            <div class="col-3 border border-4">
-                <h2>
-                    Search for a City:
-                </h2>
-                <form>
-                    <input class="rounded border-1" type="text" placeholder=" San Diego">
-                    <input class="rounded border-0 submit" type ="submit" value="Search">
-                </form>
-                <p>(bottom border here)</p>
-            </div>
-                <div class="col-9 border border-4 text-left">
-                    <h2>
-                        (Weather API here)
-                    </h2>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3 border border-4 text-center">
-                    <p>(previous searches here)</p>
-                </div>
-                <div class="col-9 border border-4 text-left">
-                    <h3>
-                        5-Day Forecast:
-                    </h3>
-                    <div class="card">
-                        Date 1 (Tomorrow)
-                        <div class="card-body">
-                            forecast details 1
-                        </div>
-                    </div>
-                    <div class="card">
-                        Date 2
-                        <div class="card-body">
-                            forecast details 2
-                        </div>
-                    </div>
-                    <div class="card">
-                        Date 3
-                        <div class="card-body">
-                            forecast details 3
-                        </div>
-                    </div>
-                    <div class="card">
-                        Date 4
-                        <div class="card-body">
-                            forecast details 4
-                        </div>
-                    </div>
-                    <div class="card">
-                        Date 5
-                        <div class="card-body">
-                            forecast details 5
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container px-0">
+      <div class="row justify-content-between">
+        <div class="col-3">
+          <h2 class="bold">Search for a City:</h2>
+          <form>
+            <input
+              class="rounded border-1 py-1"
+              type="text"
+              placeholder=" San Diego"
+            />
+            <input
+              class="rounded border-0 submit py-1"
+              type="submit"
+              value="Search"
+            />
+          </form>
+          <hr class="border border-2 border-dark text-dark">
+
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
+        <!-- 
+          <div class="col-9 px-0">
+          <h2 class="bold">(Weather API here)</h2> 
+        -->
+
+        <!-- 
+          <div class="row">
+            <div>
+              <h2 class="bold">(5-day forecast here)</h2>
+
+              <div class="container">
+                <div class="row justify-content-between">
+                  <div class="card col-2">Date 1<div class="card-body">card body 1</div></div>
+                  <div class="card col-2">Date 2<div class="card-body">card body 2</div></div>
+                  <div class="card col-2">Date 3<div class="card-body">card body 3</div></div>
+                  <div class="card col-2">Date 4<div class="card-body">card body 4</div></div>
+                  <div class="card col-2">Date 5<div class="card-body">card body 5</div></div> 
+                </div>
+              </div>
+            </div>
+          </div> 
+        -->
+        </div>
+      </div>
     </div>
-
-    
-
 
     <!--JQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
 
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>

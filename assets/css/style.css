@@ -1,6 +1,6 @@
 * {
     margin: 0px;
-    padding: 0px;
+    padding: 0px
 }
 
 #gradient {
@@ -8,6 +8,10 @@
     color: white;
     padding: 0px;
     margin: 0px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 input {
