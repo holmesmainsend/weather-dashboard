@@ -253,7 +253,6 @@ function getWeather(event) {
                     } else {
                       uvIndex.classList.add("text-danger");
                     }
-                    
                   } else {
                     var card = document.querySelector(".card" + [i]);
                     var cardImage = document.querySelector(".card-image" + [i]);
