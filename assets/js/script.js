@@ -86,10 +86,13 @@ function priorSearch(event) {
 
                 // UV Index Color
                 if (weatherData.current.uvi < 3) {
+                  uvIndex.classList.remove("text-warning", "text-danger");
                   uvIndex.classList.add("text-success");
                 } else if (weatherData.current.uvi < 6) {
+                  uvIndex.classList.remove("text-success", "text-danger");
                   uvIndex.classList.add("text-warning");
                 } else {
+                  uvIndex.classList.remove("text-success", "text-warning");
                   uvIndex.classList.add("text-danger");
                 }
               } else {
@@ -247,10 +250,13 @@ function getWeather(event) {
 
                     // UV Index Color
                     if (weatherData.current.uvi < 3) {
+                      uvIndex.classList.remove("text-warning", "text-danger");
                       uvIndex.classList.add("text-success");
                     } else if (weatherData.current.uvi < 6) {
+                      uvIndex.classList.remove("text-success", "text-danger");
                       uvIndex.classList.add("text-warning");
                     } else {
+                      uvIndex.classList.remove("text-success", "text-warning");
                       uvIndex.classList.add("text-danger");
                     }
                   } else {
