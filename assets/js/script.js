@@ -33,7 +33,7 @@ function priorSearch(event) {
 
   // API for Latitude and Longitude
   var apiUrl =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     cityName +
     "&appid=6aef7b488f7359fa679b7e37de1e29a9";
   fetch(apiUrl).then(function (response) {
@@ -167,7 +167,7 @@ function getWeather(event) {
 
     // API for Latitude and Longitude
     var apiUrl =
-      "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      "https://api.openweathermap.org/geo/1.0/direct?q=" +
       cityName +
       "&appid=6aef7b488f7359fa679b7e37de1e29a9";
     fetch(apiUrl).then(function (response) {
