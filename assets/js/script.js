@@ -8,6 +8,7 @@ var wind = document.querySelector(".wind");
 var humidity = document.querySelector(".humidity");
 var uvIndex = document.querySelector(".uvIndex");
 var searchHistory = document.querySelector(".search-history");
+var currentImage = document.querySelector(".current-image");
 var x = localStorage.length;
 
 // Search History on Page Load
@@ -25,8 +26,7 @@ for (i = 0; i < localStorage.length; i++) {
   searchHistory.appendChild(cityButton);
   cityButton.addEventListener("click", priorSearch);
 }
-
-// Functions
+// Prior Search Button Click
 function priorSearch(event) {
   event.preventDefault();
   var cityName = this.textContent;
@@ -66,6 +66,13 @@ function priorSearch(event) {
 
                 cityTitle.textContent = cityName + " (" + humanDateFormat + ")";
 
+                // Icon Generator
+                console.log(weatherData);
+                currentImage.src =
+                  "assets/icons/" +
+                  weatherData.current.weather[0].icon +
+                  ".png";
+
                 // Temperature Conversion
                 var fahrenheit =
                   (weatherData.current.temp - 273.15) * (9 / 5) + 32;
@@ -76,8 +83,18 @@ function priorSearch(event) {
                 humidity.textContent =
                   "Humidity: " + weatherData.current.humidity + "%";
                 uvIndex.textContent = "UV Index: " + weatherData.current.uvi;
+
+                // UV Index Color
+                if (weatherData.current.uvi < 3) {
+                  uvIndex.classList.add("text-success");
+                } else if (weatherData.current.uvi < 6) {
+                  uvIndex.classList.add("text-warning");
+                } else {
+                  uvIndex.classList.add("text-danger");
+                }
               } else {
                 var card = document.querySelector(".card" + [i]);
+                var cardImage = document.querySelector(".card-image" + [i]);
                 var cardDate = document.querySelector(".card-date" + [i]);
                 var cardTemp = document.querySelector(".card-temp" + [i]);
                 var cardWind = document.querySelector(".card-wind" + [i]);
@@ -96,6 +113,12 @@ function priorSearch(event) {
                 var humanDateFormat = humanDateTime.split(",")[0];
 
                 cardDate.textContent = humanDateFormat;
+
+                // Icon Generator
+                cardImage.src =
+                  "assets/icons/" +
+                  weatherData.daily[i].weather[0].icon +
+                  ".png";
 
                 // Temperature Conversion
                 var fahrenheit =
@@ -121,7 +144,7 @@ function priorSearch(event) {
     });
   });
 }
-
+// New Search
 function getWeather(event) {
   event.preventDefault();
   var cityName = input.value.trim();
@@ -170,7 +193,6 @@ function getWeather(event) {
           x++;
           cityButton.addEventListener("click", priorSearch);
 
-
           var getLat = data[0].lat;
           var getLon = data[0].lon;
 
@@ -184,6 +206,8 @@ function getWeather(event) {
           fetch(apiUrl).then(function (response2) {
             if (response2.ok) {
               response2.json().then(function (weatherData) {
+                console.log(weatherData);
+
                 // Page Text Content
                 for (i = 0; i < 6; i++) {
                   if (i === 0) {
@@ -200,6 +224,13 @@ function getWeather(event) {
                     cityTitle.textContent =
                       cityName + " (" + humanDateFormat + ")";
 
+                    // Icon Generator
+                    console.log(weatherData);
+                    currentImage.src =
+                      "assets/icons/" +
+                      weatherData.current.weather[0].icon +
+                      ".png";
+
                     // Temperature Conversion
                     var fahrenheit =
                       (weatherData.current.temp - 273.15) * (9 / 5) + 32;
@@ -213,8 +244,19 @@ function getWeather(event) {
                       "Humidity: " + weatherData.current.humidity + "%";
                     uvIndex.textContent =
                       "UV Index: " + weatherData.current.uvi;
+
+                    // UV Index Color
+                    if (weatherData.current.uvi < 3) {
+                      uvIndex.classList.add("text-success");
+                    } else if (weatherData.current.uvi < 6) {
+                      uvIndex.classList.add("text-warning");
+                    } else {
+                      uvIndex.classList.add("text-danger");
+                    }
+                    
                   } else {
                     var card = document.querySelector(".card" + [i]);
+                    var cardImage = document.querySelector(".card-image" + [i]);
                     var cardDate = document.querySelector(".card-date" + [i]);
                     var cardTemp = document.querySelector(".card-temp" + [i]);
                     var cardWind = document.querySelector(".card-wind" + [i]);
@@ -233,6 +275,12 @@ function getWeather(event) {
                     var humanDateFormat = humanDateTime.split(",")[0];
 
                     cardDate.textContent = humanDateFormat;
+
+                    // Icon Generator
+                    cardImage.src =
+                      "assets/icons/" +
+                      weatherData.daily[i].weather[0].icon +
+                      ".png";
 
                     // Temperature Conversion
                     var fahrenheit =
@@ -261,6 +309,5 @@ function getWeather(event) {
     });
   }
 }
-
-// Event Listener
+// New Search Event Listener
 form.addEventListener("submit", getWeather);

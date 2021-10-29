@@ -1,35 +1,38 @@
 * {
-    margin: 0px;
-    padding: 0px
+  margin: 0px;
+  padding: 0px;
 }
 
 #gradient {
-    background-image: linear-gradient(to right, rgba(52,97,186,255), rgb(1, 1, 102));
-    color: white;
-    padding: 0px;
-    margin: 0px;
+  background-image: linear-gradient(
+    to right,
+    rgba(52, 97, 186, 255),
+    rgb(1, 1, 102)
+  );
+  color: white;
+  padding: 0px;
+  margin: 0px;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .max-width {
-    width: 100%;
+  width: 100%;
 }
 
 .submit {
-    margin-top: 5px;
-    color: white;
-    background-color: rgba(80,152,230,255)
-
+  margin-top: 5px;
+  color: white;
+  background-color: rgba(80, 152, 230, 255);
 }
 
 .cardcolor {
-    color: white;
-    background-color: rgba(45,62,80,255);
+  color: white;
+  background-color: rgba(45, 62, 80, 255);
 }
 
 .cityButton {
-    background-color: rgba(174,174,174,255);
+  background-color: rgba(174, 174, 174, 255);
 }

@@ -1,11 +1,11 @@
 <!--TODO-->
-<!--Eliminate white spaces on either side of page-->
-
-<!--Save previous searches to local storage and use to populate city search sidebar as buttons-->
-<!--Make search history sidebar buttons clickable, generating a fresh forecast for the city as a result-->
-
-<!--Add weather icons from (?) depending on forecasted conditions, along with UV index color (green, yellow, or red)-->
+<!--Eliminate white space on either side of page-->
+<!--Add UV index colors (green, yellow, or red)-->
 <!--Format documents and add screenshot + details to README.md-->
+
+<!--Bug fixing: -->
+<!--Prohibit duplicate cities in search history sidebar/localStorage-->
+<!--Restructure functions to eliminate the redundancies between getWeather and priorSearch(?)-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
@@ -55,21 +54,17 @@
               value="Search"
             />
           </form>
-          <hr class="border border-2 border-dark text-dark">
-
-
-
-          <!--Previous search items here-->
-
+          <hr class="border border-2 border-dark text-dark" />
         </div>
 
         <div class="col-9">
           <div class="current-box">
-            <h2 class="city-title bold px-1"></h2> 
+            <h2 class="city-title bold px-1"></h2>
+            <img class="current-image" />
             <p class="temp px-2"></p>
             <p class="wind px-2"></p>
             <p class="humidity px-2"></p>
-            <p class="uvIndex px-2"></p>
+            <p class="uvIndex px-2 bold"></p>
           </div>
 
           <div class="row">
@@ -78,10 +73,10 @@
 
               <div class="container">
                 <div class="deck row justify-content-between">
-
                   <div class="card1 card border-0 col-2">
                     <p class="card-date1 bold"></p>
                     <div class="card-body px-0">
+                      <img class="card-image1" />
                       <p class="card-temp1"></p>
                       <p class="card-wind1"></p>
                       <p class="card-humidity1"></p>
@@ -90,6 +85,7 @@
                   <div class="card2 card border-0 col-2">
                     <p class="card-date2 bold"></p>
                     <div class="card-body px-0">
+                      <img class="card-image2" />
                       <p class="card-temp2"></p>
                       <p class="card-wind2"></p>
                       <p class="card-humidity2"></p>
@@ -98,6 +94,7 @@
                   <div class="card3 card border-0 col-2">
                     <p class="card-date3 bold"></p>
                     <div class="card-body px-0">
+                      <img class="card-image3" />
                       <p class="card-temp3"></p>
                       <p class="card-wind3"></p>
                       <p class="card-humidity3"></p>
@@ -106,6 +103,7 @@
                   <div class="card4 card border-0 col-2">
                     <p class="card-date4 bold"></p>
                     <div class="card-body px-0">
+                      <img class="card-image4" />
                       <p class="card-temp4"></p>
                       <p class="card-wind4"></p>
                       <p class="card-humidity4"></p>
@@ -114,17 +112,16 @@
                   <div class="card5 card border-0 col-2">
                     <p class="card-date5 bold"></p>
                     <div class="card-body px-0">
+                      <img class="card-image5" />
                       <p class="card-temp5"></p>
                       <p class="card-wind5"></p>
                       <p class="card-humidity5"></p>
                     </div>
                   </div>
-
                 </div>
               </div>
-              
             </div>
-          </div> 
+          </div>
         </div>
       </div>
     </div>
