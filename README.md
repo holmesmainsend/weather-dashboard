@@ -5,7 +5,7 @@
 A web application allowing you to get the current weather conditions and 5-day forecast for any city you search.
 
 ## Note
-Clear your browser's localStorage before your first use of this application.
+Clear your browser's localStorage before first time use of this application.
 
 ## Built With
 * HTML
