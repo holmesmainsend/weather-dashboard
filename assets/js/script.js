@@ -67,7 +67,6 @@ function priorSearch(event) {
                 cityTitle.textContent = cityName + " (" + humanDateFormat + ")";
 
                 // Icon Generator
-                console.log(weatherData);
                 currentImage.src =
                   "assets/icons/" +
                   weatherData.current.weather[0].icon +
@@ -228,7 +227,6 @@ function getWeather(event) {
                       cityName + " (" + humanDateFormat + ")";
 
                     // Icon Generator
-                    console.log(weatherData);
                     currentImage.src =
                       "assets/icons/" +
                       weatherData.current.weather[0].icon +
