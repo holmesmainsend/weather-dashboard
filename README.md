@@ -1,18 +1,25 @@
-# weather-dashboard
+# Weather Dashboard
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ![Screenshot of Website](assets/weatherdashboard-capture.png)
 
-## Purpose
-A web application allowing you to get the current weather conditions and 5-day forecast for any city you search.
+Link to website: https://holmesmainsend.github.io/weather-dashboard/
 
-## Note
-Clear your browser's localStorage before first time use of this application.
+  ## Table of Contents
+  * [Description](#description)
+  * [License](#license)
+  * [Questions?](#questions)
 
-## Built With
-* HTML
-* CSS
-* JavaScript
-* Bootstrap
-* OpenWeather API
 
-## Website
-https://holmesmainsend.github.io/weather-dashboard/
+## Description
+  A web application allowing you to get the current weather conditions and 5-day forecast for any city you search. Relies on the OpenWeather API for current and forecasted weather data. You may need to clear your browser's localStorage before first time use of this application.
+
+
+## License
+  Click the badge at the top of this README for more information on this particular license.
+
+
+## Questions?
+  * GitHub: https://github.com/holmesmainsend
+  * LinkedIn: https://www.linkedin.com/in/sean-holmesmainsend/
